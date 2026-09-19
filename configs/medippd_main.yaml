@@ -1,0 +1,47 @@
+seed: 42
+cap_diameter_mm: 30.0
+
+data:
+  dataset_root: datasets/ppd553_seg
+  patient_csv: datasets/ppd553_patient_info.csv
+  validation_ratio: 0.2
+
+outputs:
+  run_root: runs/medippd_main
+  result_root: results/medippd_main
+
+segmentation:
+  model: yolov8s-seg.pt
+  image_size: 768
+  epochs: 60
+  batch: 12
+
+strong_features:
+  model: yolo11n.pt
+  image_size: 960
+  epochs: 80
+  batch: 16
+
+vlm:
+  model: llava-hf/llava-1.5-7b-hf
+  offline: true
+  frozen: true
+  views: [global, roi, masked]
+  grid_size: 12
+
+task_routed:
+  representation_dim: 128
+  stage_one_epochs: 20
+  stage_two_epochs: 40
+  batch_size: 32
+  validation_batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 10
+  gradient_clip_norm: 5.0
+  main_budget_minutes: 35
+
+fusion:
+  adapter_epochs: 80
+  dermal_tokens: [reaction, blister, necrosis, double_ring]
+
