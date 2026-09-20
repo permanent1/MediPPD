@@ -1,10 +1,8 @@
 # Dataset layout
 
-The MediPPD dataset is not distributed with this repository. It can be made
-available for research use by contacting the authors, subject to the applicable
-ethics, privacy, and data-use requirements.
+Please refer to https://huggingface.co/datasets/DoubleYue/MediPPD.
 
-After access is granted, place the private files in the following layout:
+After the download is complete, place the private files in the following layout:
 
 ```text
 datasets/
