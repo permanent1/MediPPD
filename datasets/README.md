@@ -1,6 +1,6 @@
 # Dataset layout
 
-Please refer to https://huggingface.co/datasets/DoubleYue/MediPPD.
+To ensure anonymity, the specific dataset links will be made public after the paper is accepted.
 
 After the download is complete, place the private files in the following layout:
 
